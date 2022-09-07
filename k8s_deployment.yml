@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetes-tutorial-deployment
+  name: nginx-demo
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: kubernetes-tutorial-deployment
+      app: nginx-demo
   template:
     metadata:
       labels:
-        app: kubernetes-tutorial-deployment
+        app: nginx-demo
     spec:
       containers:
-      - name: kubernetes-tutorial-application
-        image: auth0blog/kubernetes-tutorial
+      - name: nginx-demo
+        image: nginx:1.14.2
         ports:
-          - containerPort: 3000
+          - containerPort: 80
